@@ -1,3 +1,4 @@
+---
 <a name="English"></a>
 # PokéM2O Core
 ## A simple way to automate mechanics of PokéMMO (MuHelper console style)
@@ -83,8 +84,8 @@ from utils import press_key, wait, random_int
 ```
 
 ---
-
-## 🚀 Quick Start <a name="Quick Start"></a>
+<a name="quick-start"></a>
+## 🚀 Quick Start
 
 ### Example 1: Press a Key
 ```python
@@ -529,7 +530,7 @@ from utils import press_key, wait, random_int
 ```
 
 ---
-<a name="Inicio Rápido"></a>
+<a name="Inicio-Rápido"></a>
 ## 🚀 Inicio Rápido
 
 ### Ejemplo 1: Presionar una Tecla
