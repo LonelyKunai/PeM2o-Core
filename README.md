@@ -1,7 +1,8 @@
+<a name="English"></a>
 # PokéM2O Core
 ## A simple way to automate mechanics of PokéMMO (MuHelper console style)
 
-[English](#english) | [Español](#español) <a name="English"></a>
+[English](#english) | [Español](#español)
 
 ---
 
