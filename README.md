@@ -17,8 +17,8 @@
 - [License](#license)
 
 ---
-
-## 🎯 Overview [Overview]
+<a name="Overview"></a>
+## 🎯 Overview
 
 **PokéM2O Core** is a lightweight, well-documented Python module that provides 17 reusable functions for common automation tasks. Perfect for building bots, automation scripts, and game control applications.
 
@@ -31,8 +31,8 @@
 ✅ **Modular** - Import only what you need  
 
 ---
-
-## 🌟 Features [Features]
+<a name="Features"></a>
+## 🌟 Features
 
 ### Keyboard Control
 - Press individual keys
@@ -58,8 +58,8 @@
 - Key validation
 
 ---
-
-## 📥 Installation [Installation]
+<a name="Installation"></a>
+## 📥 Installation
 
 ### 1. Download the module
 Copy `utils.py` to your project directory
@@ -83,7 +83,7 @@ from utils import press_key, wait, random_int
 
 ---
 
-## 🚀 Quick Start [Quick Start]
+## 🚀 Quick Start <a name="Quick Start"></a>
 
 ### Example 1: Press a Key
 ```python
@@ -119,8 +119,8 @@ if config:
 ```
 
 ---
-
-## 📚 Functions Reference [Functions]
+<a name="Functions"></a>
+## 📚 Functions Reference
 
 ### Keyboard Functions
 
@@ -357,7 +357,7 @@ if is_valid_key('z'):
 
 ---
 
-## 💡 Complete Examples [Examples]
+## 💡 Complete Examples <a name="Examples"></a>
 
 See `examples.py` for comprehensive demonstrations of all functions.
 
@@ -367,8 +367,8 @@ python examples.py
 ```
 
 ---
-
-## 📋 Requirements [Requirements]
+<a name="Requirements"></a>
+## 📋 Requirements
 
 - Python 3.8 or higher
 - pynput (for keyboard control)
@@ -420,8 +420,8 @@ smart_action(attack=True, move=True)
 ```
 
 ---
-
-## 📝 License [License]
+<a name="License"></a>
+## 📝 License
 
 MIT License - Feel free to use in your projects
 
