@@ -446,8 +446,8 @@ For more information:
 
 <a name="español"></a>
 
-# Utils - Módulo de Utilidades Comunes
-## Funciones Python Reutilizables para Automatización
+# PokéM2O Core
+## Una manera simple de automatizar mecanicas de PokéMMO (Estilo MuHelper)
 
 [English](#english) | [Español](#español)
 
