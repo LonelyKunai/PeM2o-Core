@@ -1,5 +1,5 @@
-# Utils - Common Utilities Module
-## Reusable Python Functions for Automation
+# PokéM2O Core
+## A simple way to automate mechanics of PokéMMO (MuHelper console style)
 
 **English** | [Español](#español)
 
@@ -18,9 +18,9 @@
 
 ---
 
-## 🎯 Overview
+## 🎯 Overview [Overview]
 
-**Utils** is a lightweight, well-documented Python module that provides 17 reusable functions for common automation tasks. Perfect for building bots, automation scripts, and game control applications.
+**PokéM2O Core** is a lightweight, well-documented Python module that provides 17 reusable functions for common automation tasks. Perfect for building bots, automation scripts, and game control applications.
 
 ### Key Benefits
 
@@ -32,7 +32,7 @@
 
 ---
 
-## 🌟 Features
+## 🌟 Features [Features]
 
 ### Keyboard Control
 - Press individual keys
@@ -59,7 +59,7 @@
 
 ---
 
-## 📥 Installation
+## 📥 Installation [Installation]
 
 ### 1. Download the module
 Copy `utils.py` to your project directory
@@ -83,7 +83,7 @@ from utils import press_key, wait, random_int
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start [Quick Start]
 
 ### Example 1: Press a Key
 ```python
@@ -120,7 +120,7 @@ if config:
 
 ---
 
-## 📚 Functions Reference
+## 📚 Functions Reference [Functions]
 
 ### Keyboard Functions
 
@@ -357,7 +357,7 @@ if is_valid_key('z'):
 
 ---
 
-## 💡 Complete Examples
+## 💡 Complete Examples [Examples]
 
 See `examples.py` for comprehensive demonstrations of all functions.
 
@@ -368,7 +368,7 @@ python examples.py
 
 ---
 
-## 📋 Requirements
+## 📋 Requirements [Requirements]
 
 - Python 3.8 or higher
 - pynput (for keyboard control)
@@ -421,7 +421,7 @@ smart_action(attack=True, move=True)
 
 ---
 
-## 📝 License
+## 📝 License [License]
 
 MIT License - Feel free to use in your projects
 
