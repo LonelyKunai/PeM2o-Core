@@ -1,0 +1,356 @@
+════════════════════════════════════════════════════════════════════════════════
+                          UTILS MODULE - PROJECT INFORMATION
+                        MÓDULO UTILS - INFORMACIÓN DEL PROYECTO
+════════════════════════════════════════════════════════════════════════════════
+
+📦 PROJECT SUMMARY / RESUMEN DEL PROYECTO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Utils is a lightweight, reusable Python module with 17 functions for common
+automation tasks. It includes keyboard control, file management, window
+management, and utility functions - all well-documented and ready to use.
+
+Utils es un módulo Python ligero y reutilizable con 17 funciones para tareas
+comunes de automatización. Incluye control de teclado, gestión de archivos,
+gestión de ventanas y funciones de utilidad - todo bien documentado y listo
+para usar.
+
+════════════════════════════════════════════════════════════════════════════════
+
+📁 FILE STRUCTURE / ESTRUCTURA DE ARCHIVOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 CORE LIBRARY
+├─ utils.py ......................... Main module (600+ lines, 17 functions)
+│  └─ Módulo principal (600+ líneas, 17 funciones)
+
+📖 DOCUMENTATION
+├─ README.md ........................ Complete API reference (English & Spanish)
+│  └─ Referencia API completa (English y Spanish)
+├─ GETTING_STARTED.md ............... Quick start guide (English & Spanish)
+│  └─ Guía de inicio rápido (English y Spanish)
+├─ STRUCTURE.md ..................... Repository overview (English & Spanish)
+│  └─ Descripción del repositorio (English y Spanish)
+└─ QUICK_REFERENCE.txt .............. Quick reference card (English & Spanish)
+   └─ Tarjeta de referencia rápida (English y Spanish)
+
+💡 EXAMPLES
+├─ examples.py ...................... 12 practical examples (400+ lines)
+│  └─ 12 ejemplos prácticos (400+ líneas)
+└─ config.example.txt ............... Example configuration file
+   └─ Archivo de configuración de ejemplo
+
+⚙️ CONFIGURATION
+├─ requirements.txt ................. Dependencies (pip install -r)
+│  └─ Dependencias (pip install -r)
+└─ .gitignore ....................... Git ignore rules
+   └─ Reglas de ignoro de Git
+
+📜 LICENSE
+└─ LICENSE .......................... MIT License
+   └─ Licencia MIT
+
+════════════════════════════════════════════════════════════════════════════════
+
+🎯 QUICK START / INICIO RÁPIDO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. INSTALL DEPENDENCIES / INSTALAR DEPENDENCIAS:
+   ─────────────────────────────────────────────
+   $ pip install -r requirements.txt
+
+2. TRY EXAMPLES / PROBAR EJEMPLOS:
+   ────────────────────────────────
+   $ python examples.py
+
+3. USE IN YOUR CODE / USAR EN TU CÓDIGO:
+   ──────────────────────────────────────
+   from utils import press_key, wait
+   
+   press_key('z', 0.5)  # Press 'z' for 0.5 seconds
+   wait(2)              # Wait 2 seconds
+
+════════════════════════════════════════════════════════════════════════════════
+
+📚 DOCUMENTATION GUIDE / GUÍA DE DOCUMENTACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+For Beginners / Para Principiantes:
+├─ 1. Read GETTING_STARTED.md (10 min)
+│     Lee GETTING_STARTED.md (10 min)
+├─ 2. Run python examples.py (5 min)
+│     Ejecuta python examples.py (5 min)
+└─ 3. Try the examples in code (20 min)
+      Prueba los ejemplos en código (20 min)
+
+For Developers / Para Desarrolladores:
+├─ 1. Check QUICK_REFERENCE.txt (5 min)
+│     Revisa QUICK_REFERENCE.txt (5 min)
+├─ 2. Read README.md API section (30 min)
+│     Lee la sección API de README.md (30 min)
+└─ 3. Review function docstrings in utils.py (optional)
+      Revisa docstrings en utils.py (opcional)
+
+For Integration / Para Integración:
+├─ 1. Copy utils.py to your project
+│     Copia utils.py a tu proyecto
+├─ 2. Import required functions
+│     Importa funciones requeridas
+├─ 3. Check examples.py for patterns
+│     Revisa examples.py para patrones
+└─ 4. Refer to README.md for detailed docs
+      Consulta README.md para documentación detallada
+
+════════════════════════════════════════════════════════════════════════════════
+
+🔧 AVAILABLE FUNCTIONS / FUNCIONES DISPONIBLES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+KEYBOARD (4 functions)
+├─ press_key()
+├─ repeat_key()
+├─ press_key_sequence()
+└─ get_random_direction_key()
+
+NUMBERS (2 functions)
+├─ random_int()
+└─ random_float()
+
+TIME (2 functions)
+├─ wait()
+└─ wait_random()
+
+FILES (4 functions)
+├─ load_config_file()
+├─ save_config_file()
+├─ file_exists()
+└─ get_files_in_directory()
+
+WINDOWS (3 functions)
+├─ find_window_by_title()
+├─ focus_window()
+└─ get_window_rect()
+
+UTILITIES (2 functions)
+├─ setup_logger()
+└─ is_valid_key()
+
+════════════════════════════════════════════════════════════════════════════════
+
+✨ KEY FEATURES / CARACTERÍSTICAS PRINCIPALES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Well-Documented
+   Bien Documentado
+   ├─ Every function has docstrings
+   └─ Cada función tiene docstrings
+
+✅ Error Handling
+   Manejo de Errores
+   ├─ Built-in exception management
+   └─ Gestión integrada de excepciones
+
+✅ Flexible
+   Flexible
+   ├─ Works with strings and Key objects
+   └─ Funciona con strings y objetos Key
+
+✅ Modular
+   Modular
+   ├─ Import only what you need
+   └─ Importa solo lo que necesites
+
+✅ Production Ready
+   Listo para Producción
+   ├─ Tested and stable
+   └─ Probado y estable
+
+✅ Open Source
+   Código Abierto
+   ├─ MIT License
+   └─ Licencia MIT
+
+════════════════════════════════════════════════════════════════════════════════
+
+🚀 COMMON USE CASES / CASOS DE USO COMUNES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. GAME BOT / BOT DE JUEGO
+   ─────────────────────────
+   Automate game actions with keyboard control
+   Automatizar acciones de juego con control de teclado
+
+2. GUI AUTOMATION / AUTOMATIZACIÓN DE GUI
+   ───────────────────────────────────────
+   Control applications and windows programmatically
+   Controlar aplicaciones y ventanas programáticamente
+
+3. TESTING / PRUEBAS
+   ──────────────────
+   Automate testing with simulated keyboard input
+   Automatizar pruebas con entrada de teclado simulada
+
+4. TASK AUTOMATION / AUTOMATIZACIÓN DE TAREAS
+   ────────────────────────────────────────────
+   Automate repetitive keyboard and file tasks
+   Automatizar tareas repetitivas de teclado y archivo
+
+════════════════════════════════════════════════════════════════════════════════
+
+📋 SYSTEM REQUIREMENTS / REQUISITOS DEL SISTEMA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Python 3.8 or higher
+  Python 3.8 o superior
+
+✓ Windows (for window management functions)
+  Windows (para funciones de gestión de ventanas)
+
+✓ pynput (keyboard control)
+  pynput (control de teclado)
+
+✓ pywin32 (optional, for window functions)
+  pywin32 (opcional, para funciones de ventana)
+
+════════════════════════════════════════════════════════════════════════════════
+
+📊 PROJECT STATISTICS / ESTADÍSTICAS DEL PROYECTO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Functions ............................ 17 total
+Líneas de Código ..................... 600+ in utils.py
+Ejemplos ............................ 12 ejemplos prácticos
+Documentación ....................... 1000+ líneas
+Idiomas ............................ 2 (English & Spanish)
+Cobertura de Documentación ......... 100% (cada función)
+Manejo de Errores .................. Incluido en todas las funciones
+Estado ............................ ✅ Producción Lista
+
+════════════════════════════════════════════════════════════════════════════════
+
+💡 TIPS & TRICKS / CONSEJOS Y TRUCOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Use wait_random() to avoid detection
+  Usa wait_random() para evitar detección
+
+✓ Always focus window before pressing keys
+  Siempre enfoca la ventana antes de presionar teclas
+
+✓ Load config files for dynamic parameters
+  Carga archivos de configuración para parámetros dinámicos
+
+✓ Use setup_logger() for debugging
+  Usa setup_logger() para depuración
+
+✓ Check examples.py for common patterns
+  Revisa examples.py para patrones comunes
+
+════════════════════════════════════════════════════════════════════════════════
+
+📞 WHERE TO GET HELP / DÓNDE OBTENER AYUDA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Quick Questions / Preguntas Rápidas:
+├─ Check QUICK_REFERENCE.txt
+└─ Revisa QUICK_REFERENCE.txt
+
+Getting Started / Comenzando:
+├─ Read GETTING_STARTED.md
+└─ Lee GETTING_STARTED.md
+
+Detailed Information / Información Detallada:
+├─ Consult README.md
+└─ Consulta README.md
+
+Code Examples / Ejemplos de Código:
+├─ Run examples.py
+└─ Ejecuta examples.py
+
+Function Details / Detalles de Función:
+├─ Check docstrings in utils.py
+└─ Revisa docstrings en utils.py
+
+════════════════════════════════════════════════════════════════════════════════
+
+🔗 RELATED FILES / ARCHIVOS RELACIONADOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Main Directory / Directorio Principal:
+├─ README.md ........................ Full documentation with examples
+├─ UTILS_GUIDE.md ................... Detailed function reference
+├─ UTILS_EXAMPLES.md ................ 20+ practical examples
+└─ UTILS_CHEATSHEET.md .............. Quick reference tables
+
+═════════════════════════════════════════════════════════════════════════════════
+
+📝 LICENSE / LICENCIA
+━━━━━━━━━━━━━━━━━━━━
+
+MIT License - Free to use and modify
+Licencia MIT - Libre de usar y modificar
+
+See LICENSE file for details
+Ver archivo LICENSE para detalles
+
+════════════════════════════════════════════════════════════════════════════════
+
+🎯 NEXT STEPS / PRÓXIMOS PASOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Install dependencies
+   Instalar dependencias
+   $ pip install -r requirements.txt
+
+2. Explore documentation
+   Explorar documentación
+   → Start with GETTING_STARTED.md
+   → Comienza con GETTING_STARTED.md
+
+3. Run examples
+   Ejecutar ejemplos
+   $ python examples.py
+
+4. Try in your code
+   Probar en tu código
+   from utils import press_key, wait
+   press_key('z', 0.5)
+
+5. Build something awesome!
+   ¡Construye algo increíble!
+
+════════════════════════════════════════════════════════════════════════════════
+
+📅 VERSION INFO / INFORMACIÓN DE VERSIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version ........................... 1.0
+Release Date ..................... 2026-06-01
+Status ........................... ✅ Production Ready (Listo para Producción)
+License .......................... MIT
+Python Version ................... 3.8+
+Operating System ................. Windows (Linux/Mac: partial support)
+
+════════════════════════════════════════════════════════════════════════════════
+
+🙏 THANK YOU FOR USING UTILS! / ¡GRACIAS POR USAR UTILS!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Questions? / ¿Preguntas?
+► Check the documentation files above
+  Revisa los archivos de documentación arriba
+
+Found an issue? / ¿Encontraste un problema?
+► Report it and help us improve!
+  ¡Repórtalo y ayúdanos a mejorar!
+
+Have suggestions? / ¿Tienes sugerencias?
+► Share them with us!
+  ¡Compártelas con nosotros!
+
+════════════════════════════════════════════════════════════════════════════════
+
+Created with ❤️ for developers who want to automate efficiently
+Creado con ❤️ para desarrolladores que quieren automatizar eficientemente
+
+════════════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,237 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║                    UTILS MODULE - QUICK REFERENCE CARD                    ║
+║                   MÓDULO UTILS - TARJETA DE REFERENCIA RÁPIDA             ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════════════════
+KEYBOARD / TECLADO
+═══════════════════════════════════════════════════════════════════════════════
+
+press_key(key, duration=0.1)
+├─ Press a key for X seconds
+├─ Presionar una tecla por X segundos
+└─ press_key('z', 0.5)
+
+repeat_key(key, times=1, press_duration=0.1, interval=0.05, final_wait=0.0)
+├─ Press a key N times
+├─ Presionar una tecla N veces
+└─ repeat_key('z', times=5, press_duration=0.2, interval=0.1)
+
+press_key_sequence(keys, press_duration=0.1, interval=0.05)
+├─ Execute a sequence of keys
+├─ Ejecutar una secuencia de teclas
+└─ press_key_sequence(['z', 'x', 'z'], 0.2, 0.1)
+
+get_random_direction_key()
+├─ Get random direction (up, down, left, right)
+├─ Obtener dirección aleatoria (arriba, abajo, izquierda, derecha)
+└─ dir = get_random_direction_key()
+
+═══════════════════════════════════════════════════════════════════════════════
+NUMBERS / NÚMEROS
+═══════════════════════════════════════════════════════════════════════════════
+
+random_int(min_value, max_value)
+├─ Generate random integer
+├─ Generar entero aleatorio
+└─ n = random_int(1, 10)
+
+random_float(min_value, max_value)
+├─ Generate random decimal
+├─ Generar decimal aleatorio
+└─ f = random_float(0.5, 2.5)
+
+═══════════════════════════════════════════════════════════════════════════════
+TIME / TIEMPO
+═══════════════════════════════════════════════════════════════════════════════
+
+wait(seconds)
+├─ Wait for X seconds
+├─ Esperar X segundos
+└─ wait(2.5)
+
+wait_random(min_seconds, max_seconds)
+├─ Wait random time between min and max
+├─ Esperar tiempo aleatorio entre mín y máx
+└─ wait_random(1, 5)
+
+═══════════════════════════════════════════════════════════════════════════════
+FILES / ARCHIVOS
+═══════════════════════════════════════════════════════════════════════════════
+
+load_config_file(filepath, encoding='utf-8')
+├─ Read file lines
+├─ Leer líneas del archivo
+└─ lines = load_config_file('config.txt')
+
+save_config_file(filepath, content, encoding='utf-8')
+├─ Write content to file
+├─ Escribir contenido en archivo
+└─ save_config_file('out.txt', ['line1', 'line2'])
+
+file_exists(filepath)
+├─ Check if file exists
+├─ Verificar si archivo existe
+└─ if file_exists('config.txt'):
+
+get_files_in_directory(directory, extensions=None)
+├─ List files in directory
+├─ Listar archivos en directorio
+└─ py_files = get_files_in_directory('.', ['.py'])
+
+═══════════════════════════════════════════════════════════════════════════════
+WINDOWS / VENTANAS
+═══════════════════════════════════════════════════════════════════════════════
+
+find_window_by_title(window_title_keywords)
+├─ Find window by title keywords
+├─ Encontrar ventana por palabras clave del título
+└─ hwnd, title = find_window_by_title("PokeMMO")
+
+focus_window(hwnd)
+├─ Focus and bring window to front
+├─ Enfocar y traer ventana al frente
+└─ focus_window(hwnd)
+
+get_window_rect(hwnd)
+├─ Get window position and size
+├─ Obtener posición y tamaño de ventana
+└─ x, y, w, h = get_window_rect(hwnd)
+
+═══════════════════════════════════════════════════════════════════════════════
+UTILITIES / UTILIDADES
+═══════════════════════════════════════════════════════════════════════════════
+
+setup_logger(name, level=logging.INFO, log_file=None)
+├─ Create and configure a logger
+├─ Crear y configurar un logger
+└─ logger = setup_logger('MyBot', logging.DEBUG)
+
+is_valid_key(key)
+├─ Check if value is a valid key
+├─ Verificar si valor es una tecla válida
+└─ if is_valid_key('z'):
+
+═══════════════════════════════════════════════════════════════════════════════
+COMMON PATTERNS / PATRONES COMUNES
+═══════════════════════════════════════════════════════════════════════════════
+
+Retry Pattern / Patrón de Reintentos:
+─────────────────────────────────────
+for attempt in range(1, max_attempts + 1):
+    press_key(key, 0.3)
+    if attempt < max_attempts:
+        wait_random(0.5, 1.5)
+
+Timed Loop / Bucle por Tiempo:
+──────────────────────────────
+import time
+start = time.time()
+while time.time() - start < 60:
+    press_key('z', 0.3)
+    wait_random(1, 2)
+
+Configuration Loading / Carga de Configuración:
+───────────────────────────────────────────────
+if file_exists('config.txt'):
+    config = load_config_file('config.txt')
+    for line in config:
+        process_line(line)
+
+Window Management / Gestión de Ventanas:
+─────────────────────────────────────────
+hwnd, title = find_window_by_title("PokeMMO")
+if hwnd:
+    focus_window(hwnd)
+    x, y, w, h = get_window_rect(hwnd)
+
+═══════════════════════════════════════════════════════════════════════════════
+KEYBOARD CONSTANTS / CONSTANTES DE TECLADO
+═══════════════════════════════════════════════════════════════════════════════
+
+From pynput.keyboard import Key
+
+Key.up              ↑ Flecha Arriba
+Key.down            ↓ Flecha Abajo
+Key.left            ← Flecha Izquierda
+Key.right           → Flecha Derecha
+Key.enter           Entrar
+Key.space           Espacio
+Key.backspace       Retroceso
+Key.delete          Eliminar
+Key.tab             Tabulación
+Key.esc             Escape
+Key.alt             Alt
+Key.ctrl            Control
+Key.shift           Mayúscula
+
+String Characters / Caracteres String:
+'a' to 'z'          Letras a-z
+'0' to '9'          Números 0-9
+Special: 'z', 'x', 'c', etc.
+
+═══════════════════════════════════════════════════════════════════════════════
+INSTALLATION / INSTALACIÓN
+═══════════════════════════════════════════════════════════════════════════════
+
+pip install -r requirements.txt
+
+OR / O:
+
+pip install pynput>=1.7.6
+pip install pywin32>=305
+
+═══════════════════════════════════════════════════════════════════════════════
+QUICK START / INICIO RÁPIDO
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Copy utils.py to your project
+   Copia utils.py a tu proyecto
+
+2. Import functions
+   Importa funciones:
+   from utils import press_key, wait, random_int
+
+3. Use in code
+   Usa en código:
+   press_key('z', 0.5)
+   wait(2)
+
+4. Run examples
+   Ejecuta ejemplos:
+   python examples.py
+
+═══════════════════════════════════════════════════════════════════════════════
+DOCUMENTATION / DOCUMENTACIÓN
+═══════════════════════════════════════════════════════════════════════════════
+
+README.md ..................... Complete API Reference / Referencia API Completa
+GETTING_STARTED.md ............ Quick Setup / Configuración Rápida
+examples.py ................... 12 Practical Examples / 12 Ejemplos Prácticos
+STRUCTURE.md .................. Repository Layout / Estructura del Repositorio
+utils.py ...................... Source Code / Código Fuente (comentado)
+
+═══════════════════════════════════════════════════════════════════════════════
+TIPS & TRICKS / CONSEJOS Y TRUCOS
+═══════════════════════════════════════════════════════════════════════════════
+
+✓ Always use press_key() instead of pynput directly
+  Siempre usa press_key() en lugar de pynput directamente
+
+✓ Use wait_random() to avoid detection
+  Usa wait_random() para evitar detección
+
+✓ Check file_exists() before load_config_file()
+  Verifica file_exists() antes de load_config_file()
+
+✓ Remember to focus window before pressing keys
+  Recuerda enfocar la ventana antes de presionar teclas
+
+✓ Use setup_logger() for debugging
+  Usa setup_logger() para depuración
+
+═══════════════════════════════════════════════════════════════════════════════
+VERSION / VERSIÓN: 1.0 | DATE / FECHA: 2026-06-01 | LICENSE / LICENCIA: MIT
+═══════════════════════════════════════════════════════════════════════════════

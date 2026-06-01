@@ -1,0 +1,56 @@
+# Example Configuration File
+# Archivo de Configuración de Ejemplo
+# 
+# Rename this to config.txt and edit values as needed
+# Renombra esto a config.txt y edita los valores según sea necesario
+
+# Bot Name / Nombre del Bot
+bot_name=MyBot
+
+# Bot Version / Versión del Bot
+version=1.0
+
+# Keyboard Speed (1-10, where 1 is slowest)
+# Velocidad de Teclado (1-10, donde 1 es más lento)
+key_speed=5
+
+# Default Delay (seconds) / Retraso por Defecto (segundos)
+default_delay=1.5
+
+# Mode: farming, testing, debug
+# Modo: farming, testing, debug
+mode=farming
+
+# Enable Logging / Habilitar Logging
+logging_enabled=true
+
+# Log Level: DEBUG, INFO, WARNING, ERROR
+# Nivel de Log: DEBUG, INFO, WARNING, ERROR
+log_level=INFO
+
+# Window Title to Target / Título de Ventana a Dirigir
+target_window=PokeMMO
+
+# Auto-focus Window / Enfocar Ventana Automáticamente
+auto_focus=true
+
+# Enable Random Delays / Habilitar Retrasos Aleatorios
+random_delays=true
+
+# Minimum Random Delay (seconds) / Retraso Aleatorio Mínimo (segundos)
+min_delay=0.5
+
+# Maximum Random Delay (seconds) / Retraso Aleatorio Máximo (segundos)
+max_delay=2.0
+
+# Enable File Logging / Habilitar Logging en Archivo
+file_logging=false
+
+# Log File Path / Ruta del Archivo de Log
+log_file=bot.log
+
+# Development Mode / Modo de Desarrollo
+dev_mode=false
+
+# Comments can be added with # character
+# Los comentarios se pueden agregar con el carácter #
