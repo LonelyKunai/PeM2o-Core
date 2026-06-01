@@ -1,7 +1,7 @@
 # PokéM2O Core
 ## A simple way to automate mechanics of PokéMMO (MuHelper console style)
 
-**English** | [Español](#español)
+[English](#english) | [Español](#español)
 
 ---
 
@@ -356,8 +356,8 @@ if is_valid_key('z'):
 ```
 
 ---
-
-## 💡 Complete Examples <a name="Examples"></a>
+<a name="Examples"></a>
+## 💡 Complete Examples
 
 See `examples.py` for comprehensive demonstrations of all functions.
 
@@ -463,7 +463,7 @@ For more information:
 - [Licencia](#licencia)
 
 ---
-
+<a name="Descripción"></a>
 ## 🎯 Descripción
 
 **Utils** es un módulo Python ligero y bien documentado que proporciona 17 funciones reutilizables para tareas comunes de automatización. Perfecto para construir bots, scripts de automatización y aplicaciones de control de juegos.
@@ -477,7 +477,7 @@ For more information:
 ✅ **Modular** - Importa solo lo que necesites  
 
 ---
-
+<a name="Características"></a>
 ## 🌟 Características
 
 ### Control de Teclado
@@ -504,7 +504,7 @@ For more information:
 - Validación de teclas
 
 ---
-
+<a name="Instalación"></a>
 ## 📥 Instalación
 
 ### 1. Descargar el módulo
@@ -528,7 +528,7 @@ from utils import press_key, wait, random_int
 ```
 
 ---
-
+<a name="Inicio Rápido"></a>
 ## 🚀 Inicio Rápido
 
 ### Ejemplo 1: Presionar una Tecla
@@ -802,7 +802,7 @@ if is_valid_key('z'):
 ```
 
 ---
-
+<a name="Ejemplos"></a>
 ## 💡 Ejemplos Completos
 
 Consulta `examples.py` para demostraciones exhaustivas de todas las funciones.
@@ -813,7 +813,7 @@ python examples.py
 ```
 
 ---
-
+<a name="Requisitos"></a>
 ## 📋 Requisitos
 
 - Python 3.8 o superior
@@ -866,7 +866,7 @@ smart_action(attack=True, move=True)
 ```
 
 ---
-
+<a name="Licencia"></a>
 ## 📝 Licencia
 
 Licencia MIT - Siéntete libre de usar en tus proyectos
