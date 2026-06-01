@@ -447,7 +447,7 @@ For more information:
 # Utils - Módulo de Utilidades Comunes
 ## Funciones Python Reutilizables para Automatización
 
-**[English](#)** | Español
+[English](#english) | [Español](#español)
 
 ---
 
