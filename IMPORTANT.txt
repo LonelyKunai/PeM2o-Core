@@ -1,0 +1,5 @@
+Bot must have delay of at least, 0.7 seconds between each action and 0.3 seconds between direction change at movement, to avoid punishemnts. Otherwise, you could be banned from the game.
+I'm Making a Windows app for running self funcions like Region Clearing from scratches or Combat AI. (Only for ingame events, not PvP)
+--------------------------------------------------------
+El bot debe tener un delay de al menos, 0.7 segundos entre cada acción y 0.3 segundos al cambiar de dirección en movimiento, para evitar sanciones. De cualquier otra forma, usted podría ser vetado del juego.
+Estoy creando una aplicación de Windows para ejecutar funciones propias como Pasar Regiones desde cero o IA de Combate. (Solo para eventos dentro del juego, no PvP)
