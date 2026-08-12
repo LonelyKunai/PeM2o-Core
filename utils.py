@@ -17,8 +17,19 @@ logger = logging.getLogger(__name__)
 kb = Controller()
 
 # ============================================================================
-# FUNCIONES DE NÚMEROS Y ALEATORIOS
+# FUNCIONES DE NÚMEROS Y ALEATORIOS - OPTIMIZADAS
 # ============================================================================
+
+# Cache para evitar recrear objetos Key repetidamente
+_DIRECTION_KEYS_CACHE = None
+
+def _get_direction_keys():
+    """Obtiene la lista de teclas direccionales (cacheada)."""
+    global _DIRECTION_KEYS_CACHE
+    if _DIRECTION_KEYS_CACHE is None:
+        _DIRECTION_KEYS_CACHE = [Key.up, Key.down, Key.right, Key.left]
+    return _DIRECTION_KEYS_CACHE
+
 
 def random_int(min_value, max_value):
     """
@@ -69,7 +80,7 @@ def get_random_direction_key():
         >>> direction = get_random_direction_key()
         >>> press_key(direction, 0.5)
     """
-    return random.choice([Key.up, Key.down, Key.right, Key.left])
+    return random.choice(_get_direction_keys())
 
 
 def press_key(key, duration=0.1):
@@ -100,10 +111,10 @@ def press_key(key, duration=0.1):
             kb.press(key)
             sleep(duration)
             kb.release(key)
-        logger.debug(f"Tecla presionada: {key} ({duration}s)")
+        logger.debug("Tecla presionada: %s (%ss)", key, duration)
         return True
     except Exception as e:
-        logger.error(f"Error presionando tecla {key}: {e}")
+        logger.error("Error presionando tecla %s: %s", key, e)
         return False
 
 
@@ -140,10 +151,10 @@ def press_key_sequence(keys, press_duration=0.1, interval=0.05):
                 kb.release(key)
             sleep(interval)
         
-        logger.debug(f"Secuencia ejecutada: {keys}")
+        logger.debug("Secuencia ejecutada: %s", keys)
         return True
     except Exception as e:
-        logger.error(f"Error ejecutando secuencia: {e}")
+        logger.error("Error ejecutando secuencia: %s", e)
         return False
 
 
@@ -180,10 +191,10 @@ def repeat_key(key, times=1, press_duration=0.1, interval=0.05, final_wait=0.0):
             sleep(interval)
         
         sleep(final_wait)
-        logger.debug(f"Tecla repetida: {key} ({times} veces)")
+        logger.debug("Tecla repetida: %s (%s veces)", key, times)
         return True
     except Exception as e:
-        logger.error(f"Error repitiendo tecla {key}: {e}")
+        logger.error("Error repitiendo tecla %s: %s", key, e)
         return False
 
 
@@ -225,17 +236,17 @@ def find_window_by_title(window_title_keywords):
         win32gui.EnumWindows(enum_callback, windows)
         
         if windows:
-            logger.info(f"Ventana encontrada: {windows[0][1]}")
+            logger.info("Ventana encontrada: %s", windows[0][1])
             return windows[0]
         
-        logger.warning(f"No se encontró ventana con keywords: {keywords}")
+        logger.warning("No se encontró ventana con keywords: %s", keywords)
         return None, None
         
     except ImportError:
         logger.warning("win32gui no disponible. Instala: pip install pywin32")
         return None, None
     except Exception as e:
-        logger.error(f"Error buscando ventana: {e}")
+        logger.error("Error buscando ventana: %s", e)
         return None, None
 
 
@@ -265,7 +276,7 @@ def focus_window(hwnd):
         logger.warning("win32gui no disponible")
         return False
     except Exception as e:
-        logger.error(f"Error enfocando ventana: {e}")
+        logger.error("Error enfocando ventana: %s", e)
         return False
 
 
@@ -291,14 +302,14 @@ def get_window_rect(hwnd):
         width = right - x
         height = bottom - y
         
-        logger.debug(f"Ventana rect: x={x}, y={y}, w={width}, h={height}")
+        logger.debug("Ventana rect: x=%s, y=%s, w=%s, h=%s", x, y, width, height)
         return (x, y, width, height)
         
     except ImportError:
         logger.warning("win32gui no disponible")
         return None
     except Exception as e:
-        logger.error(f"Error obteniendo rect de ventana: {e}")
+        logger.error("Error obteniendo rect de ventana: %s", e)
         return None
 
 
@@ -324,13 +335,13 @@ def load_config_file(filepath, encoding='utf-8'):
     try:
         with open(filepath, 'r', encoding=encoding) as f:
             lines = f.readlines()
-        logger.info(f"Archivo cargado: {filepath} ({len(lines)} líneas)")
+        logger.info("Archivo cargado: %s (%s líneas)", filepath, len(lines))
         return lines
     except FileNotFoundError:
-        logger.warning(f"Archivo no encontrado: {filepath}")
+        logger.warning("Archivo no encontrado: %s", filepath)
         return []
     except Exception as e:
-        logger.error(f"Error cargando archivo {filepath}: {e}")
+        logger.error("Error cargando archivo %s: %s", filepath, e)
         return []
 
 
@@ -354,13 +365,15 @@ def save_config_file(filepath, content, encoding='utf-8'):
         if isinstance(content, list):
             content = '\n'.join(content)
         
-        os.makedirs(os.path.dirname(filepath), exist_ok=True)
+        dirname = os.path.dirname(filepath)
+        if dirname:
+            os.makedirs(dirname, exist_ok=True)
         with open(filepath, 'w', encoding=encoding) as f:
             f.write(content)
-        logger.info(f"Archivo guardado: {filepath}")
+        logger.info("Archivo guardado: %s", filepath)
         return True
     except Exception as e:
-        logger.error(f"Error guardando archivo {filepath}: {e}")
+        logger.error("Error guardando archivo %s: %s", filepath, e)
         return False
 
 
@@ -399,7 +412,7 @@ def get_files_in_directory(directory, extensions=None):
     """
     try:
         if not os.path.exists(directory):
-            logger.warning(f"Directorio no encontrado: {directory}")
+            logger.warning("Directorio no encontrado: %s", directory)
             return []
         
         files = []
@@ -413,10 +426,10 @@ def get_files_in_directory(directory, extensions=None):
                     if ext.lower() in extensions:
                         files.append(filepath)
         
-        logger.debug(f"Encontrados {len(files)} archivos en {directory}")
+        logger.debug("Encontrados %s archivos en %s", len(files), directory)
         return files
     except Exception as e:
-        logger.error(f"Error listando directorio {directory}: {e}")
+        logger.error("Error listando directorio %s: %s", directory, e)
         return []
 
 
